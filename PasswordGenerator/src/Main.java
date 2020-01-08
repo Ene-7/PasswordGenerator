@@ -1,12 +1,12 @@
 public class Main {
-    static boolean UPPER, LOWER, SPECIAL;
+    static boolean UPPER, LOWER, SPECIAL, NUMBER = true;
     public static void main(String[] argv){
 //        Generator PASSWORD = new Generator(9,false,true,false);
 //        System.out.println(PASSWORD.toString());
         Generator[] Passwords = new Generator[8];
         for(int i = 0; i < 8; i++){
             getValues(i);
-            Passwords[i] = new Generator(12,UPPER,LOWER,SPECIAL);
+            Passwords[i] = new Generator(12,UPPER,LOWER,SPECIAL, NUMBER);
             System.out.println(Passwords[i].toString());
         }
 
