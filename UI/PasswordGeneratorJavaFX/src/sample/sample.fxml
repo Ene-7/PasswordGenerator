@@ -91,6 +91,6 @@
       </Button>
    </bottom>
    <right>
-      <TextArea fx:id="PasswordDisplay" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="PasswordDisplay" prefHeight="200.0" prefWidth="200.0" text="Passwords Will Show Here:" BorderPane.alignment="CENTER" />
    </right>
 </BorderPane>
