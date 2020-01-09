@@ -17,14 +17,24 @@ public class Controller {
     public void generatePassword(){
         if(DisplayContent == false) { // IF THE DISPLAY IS CLEAR
             int count = getAmount();
+            String result = "Password(s) will show here:\n";
             if(count == 0){
                 AmountPicker.setText("Invalid Input");
                 GenerateButton.setText("Clear");
                 DisplayContent = true;
             }
+            else if(!UpperCase.isSelected() && !LowerCase.isSelected() && !SpecialChars.isSelected() && !NumericalChars.isSelected()){
+                PasswordDisplay.setText("No Contents Selected");
+                GenerateButton.setText("Clear");
+                DisplayContent = true;
+            }
             else {
 
-                PasswordDisplay.setText(new Generator(size, ));
+                for(int i = 0; i < count; i++) {
+                    result +=  ((i+1) +". " +
+                            new Generator(10, UpperCase.isSelected(), LowerCase.isSelected(), SpecialChars.isSelected(), NumericalChars.isSelected()).toString() + "\n");
+                }
+                PasswordDisplay.setText(result);
                 DisplayContent = true;
                 GenerateButton.setText("Clear");
             }
