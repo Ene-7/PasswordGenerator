@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    private final String version = "v0.1";
+    private final String version = "v0.2";
 
     public static void main(String[] args) {
         launch(args);

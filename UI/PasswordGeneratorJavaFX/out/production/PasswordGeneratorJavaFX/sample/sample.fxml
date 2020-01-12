@@ -77,6 +77,13 @@
                </VBox.margin>
             </Label>
             <TextField fx:id="AmountPicker" promptText="Default Amount: 1" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="156.0" prefHeight="17.0" text="Password Size:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="SizePicker" layoutX="10.0" layoutY="173.0" promptText="Default Size: 10" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tip: Secure passwords should be 12+ characters long" underline="true" />
          </children>
          <BorderPane.margin>
             <Insets left="20.0" right="20.0" />
@@ -91,6 +98,6 @@
       </Button>
    </bottom>
    <right>
-      <TextArea fx:id="PasswordDisplay" prefHeight="200.0" prefWidth="200.0" text="Passwords Will Show Here:" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="PasswordDisplay" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Password(s) will show here:" BorderPane.alignment="CENTER" />
    </right>
 </BorderPane>

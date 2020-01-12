@@ -8,31 +8,37 @@ import javafx.scene.control.TextField;
 public class Controller {
     public CheckBox UpperCase, LowerCase, SpecialChars, NumericalChars;
     private boolean DisplayContent = false;
-    public TextField AmountPicker;
+    public TextField AmountPicker, SizePicker;
     public Button GenerateButton;
     public TextArea PasswordDisplay;
-    int size = 10;
 
 
-    public void generatePassword(){
+    public void generatePassword(){ // ON CLICK BUTTON (GENERATE)
         if(DisplayContent == false) { // IF THE DISPLAY IS CLEAR
-            int count = getAmount();
+            int generateCount = getGenerateAmount();
+            int size = getPasswordSize();
             String result = "Password(s) will show here:\n";
-            if(count == 0){
+            if(generateCount == 0){ // If Generate Amount is Invalid
                 AmountPicker.setText("Invalid Input");
                 GenerateButton.setText("Clear");
                 DisplayContent = true;
             }
-            else if(!UpperCase.isSelected() && !LowerCase.isSelected() && !SpecialChars.isSelected() && !NumericalChars.isSelected()){
+            else // if Password Size is Invalid
+                if(size == 0){
+                    SizePicker.setText("Invalid Input");
+                    GenerateButton.setText("Clear");
+                    DisplayContent = true;
+            }
+            else //
+                if(!UpperCase.isSelected() && !LowerCase.isSelected() && !SpecialChars.isSelected() && !NumericalChars.isSelected()){
                 PasswordDisplay.setText("No Contents Selected");
                 GenerateButton.setText("Clear");
                 DisplayContent = true;
             }
             else {
-
-                for(int i = 0; i < count; i++) {
+                for(int i = 0; i < generateCount; i++) {
                     result +=  ((i+1) +". " +
-                            new Generator(10, UpperCase.isSelected(), LowerCase.isSelected(), SpecialChars.isSelected(), NumericalChars.isSelected()).toString() + "\n");
+                            new Generator(size, UpperCase.isSelected(), LowerCase.isSelected(), SpecialChars.isSelected(), NumericalChars.isSelected()).toString() + "\n");
                 }
                 PasswordDisplay.setText(result);
                 DisplayContent = true;
@@ -41,7 +47,6 @@ public class Controller {
         }
         else{
             PasswordDisplay.setText("");
-            AmountPicker.setText("");
             DisplayContent = false;
             GenerateButton.setText("Generate");
         }
@@ -49,15 +54,24 @@ public class Controller {
     }
 
 
-    private int getAmount(){ //EVALUATE INPUT FOR AMOUNT TO GENERATE
+    private int getGenerateAmount(){ //EVALUATE INPUT FOR AMOUNT TO GENERATE
         try {
-           if(AmountPicker.getText().isEmpty()) return 1; // DEFAULT VALUE
+           if(AmountPicker.getText().isEmpty()) return 5; // DEFAULT VALUE
            return Integer.parseInt(AmountPicker.getText()); // ELSE INTERPRET INPUT
        }
        catch(NumberFormatException e){
-
            return 0;
        }
+    }
+
+    private int getPasswordSize(){ //EVALUATE INPUT FOR AMOUNT TO GENERATE
+        try {
+            if(SizePicker.getText().isEmpty()) return 12; // DEFAULT VALUE
+            return Integer.parseInt(SizePicker.getText()); // ELSE INTERPRET INPUT
+        }
+        catch(NumberFormatException e){
+            return 0;
+        }
     }
 
 }

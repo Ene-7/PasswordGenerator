@@ -42,7 +42,6 @@ public class Generator {
                 password.append(getRandomChar(ALPHABET_LOWERCASE));
             }
             return;
-
         }//3
         if(!hasNum && !hasUpper && hasLower && hasSpecial){
             //GENERATE STRING WITH LOWER AND SPECIAL CHARS
@@ -89,7 +88,6 @@ public class Generator {
                 }
             }
             return;
-
         }//7
         if(!hasNum && hasUpper && hasLower && hasSpecial){
             //GENERATE STRING WITH UPPERCASE, LOWERCASE, AND SPECIAL CHARS
@@ -219,10 +217,9 @@ public class Generator {
                 }
             }
             return;
-        }//15
+        }//16
 
     }
-
 
 /*
 * @param Alphabet a String containing the chars to pick from
@@ -239,7 +236,6 @@ public class Generator {
 */
     private int randInt(int min, int max) {
         Random rand = new Random();
-
         return rand.nextInt((max - min) + 1) + min;
     }
 
