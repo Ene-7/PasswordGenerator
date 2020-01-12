@@ -18,10 +18,11 @@ Along side this program, a simple ***User Interface*** featuring options to cust
 ```
   - Password Generation Amount (Default set to 1)
   - Text Area that displays generated passwords (Clipboard friendly - copyable)
-
+  
+![](images/PassGenCapture.png)
 
 # Future Goals for Additions: 
-- Add Text Field to specify Password Length
+- [x] Add Text Field to specify Password Length
 - Addition of a new **Custom Option** where the User defines the character set that should be used for password generation.
-- Remove ability for users to write in *Passowrd Display*
+- [x] Remove ability for users to write in *Passowrd Display*
 - A way for users to save their generated passwords to a file
