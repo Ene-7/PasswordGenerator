@@ -16,8 +16,9 @@ Along side this program, a simple ***User Interface*** featuring options to cust
 ( `~!@#$%^&*()-+= ) Special Characters
 (0-9) Numerical
 ```
-  - Password Generation Amount (Default set to 1)
-  - Text Area that displays generated passwords (Clipboard friendly - copyable)
+  - Password Generation Amount (Default set to 5)
+  - Password Length Assignment (Default set to 12)
+  - Simple ***User Interface*** featuring a text area outputing all generated passwords (Clipboard friendly - copyable)
   
 ![](images/PassGenCapture.png)
 
