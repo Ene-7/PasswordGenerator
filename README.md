@@ -24,6 +24,6 @@ Along side this program, a simple ***User Interface*** featuring options to cust
 
 # Future Goals for Additions: 
 - [x] Add Text Field to specify Password Length
-- Addition of a new **Custom Option** where the User defines the character set that should be used for password generation.
-- [x] Remove ability for users to write in *Passowrd Display*
-- A way for users to save their generated passwords to a file
+- [ ] Addition of a new **Custom Option** where the User defines the character set that should be used for password generation.
+- [x] Remove ability for users to write in *Password Display*
+- [ ] A way for users to save their generated passwords to a file
