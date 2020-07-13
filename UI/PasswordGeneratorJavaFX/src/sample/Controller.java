@@ -1,42 +1,45 @@
 package sample;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
 import java.io.File;
+import java.io.PrintWriter;
 
 public class Controller {
     public CheckBox UpperCase, LowerCase, SpecialChars, NumericalChars, NumberPass;
+    public MenuItem SaveItem, ExitPG;
+    public MenuBar MenuBar;
     private boolean DisplayContent = false;
     public TextField AmountPicker, SizePicker;
     public Button GenerateButton;
     public TextArea PasswordDisplay;
+    private String TextContent =""; // Content That is ready to save to file.
 
-    VBox vbMenu;
     FileChooser fileChooser = new FileChooser();
 
-    public void initializeSave(){
-        fileChooser.setInitialDirectory(new File("C:\\temp"));
-    }
 
-    private void onClickSave(){
-        Window stage = vbMenu.getScene().getWindow();
+    //MENU BAR OPTIONS:
+
+    public void saveContent(){ // File -> Save Handler.
+        Window stage = MenuBar.getScene().getWindow();
         fileChooser.setTitle("Save Dialog");
         fileChooser.setInitialFileName("Saved_Passwords");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("text file", "*.txt"));
-
+        File file = fileChooser.showSaveDialog(stage);
         try {
-            File file = fileChooser.showSaveDialog(stage);
-            //TODO FILE WRITER HERE FOR TXT SAVE.
+            PrintWriter writer;
+            writer = new PrintWriter(file);
+            writer.println(TextContent);
+            writer.close();
+        } catch (Exception ex) {
+            System.out.println("Problem Saving File Because of: " + ex);
         }
-        catch (Exception ex){
+    }
 
-        }
+    public void Exit(){ // File -> Exit
+        System.exit(0);
     }
 
 
@@ -71,12 +74,14 @@ public class Controller {
                         result += ((i + 1) + ". " + new Generator(size, UpperCase.isSelected(), LowerCase.isSelected(), SpecialChars.isSelected(), NumericalChars.isSelected()).toString() + "\n");
                     }
                 }
+                TextContent = result;
                 PasswordDisplay.setText(result);
                 DisplayContent = true;
                 GenerateButton.setText("Clear");
             }
         }
         else{
+            TextContent = "";
             PasswordDisplay.setText("");
             DisplayContent = false;
             GenerateButton.setText("Generate");
