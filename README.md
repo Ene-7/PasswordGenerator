@@ -20,7 +20,7 @@ Along side this program, a simple ***User Interface*** featuring options to cust
   - Password Length Assignment (Default set to 12)
   - Simple ***User Interface*** featuring a text area outputing all generated passwords (Clipboard friendly - copyable)
   
-![](images/PassGenCapture.png)
+![](images/PassGenCaptureV0.3.png)
 
 # Future Goals for Additions: 
 - [x] Add Text Field to specify Password Length
