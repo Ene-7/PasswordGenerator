@@ -7,6 +7,7 @@ public class Generator {
     private final String ALPHABET_LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private final String SPECIAL_CHARS = "`~!@#$%^&*()-_=+";
     private final String NUMERICAL_CHARS ="0123456789";
+    public static String CUSTOM_CHARS = ""; //Custom Chars must remain constant to all instances
     private int length;
     private boolean hasNum = false, hasUpper = false, hasLower = false, hasSpecial = false;
     private StringBuilder password = new StringBuilder();
@@ -239,6 +240,10 @@ public class Generator {
         return rand.nextInt((max - min) + 1) + min;
     }
 
+/*
+* Password variable is a StringBuilder Object
+* .toString() is necessary to use.
+*/
     public String toString(){
         return password.toString();
     }

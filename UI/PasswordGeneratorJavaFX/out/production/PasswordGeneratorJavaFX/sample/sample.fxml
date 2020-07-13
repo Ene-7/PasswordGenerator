@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.web.*?>
@@ -16,19 +17,38 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD GENERATOR" textAlignment="CENTER" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="#00c3ff" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Text>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD GENERATOR" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#00c3ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+         </children>
+      </VBox>
    </top>
    <left>
       <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -84,6 +104,11 @@
             </Label>
             <TextField fx:id="SizePicker" layoutX="10.0" layoutY="173.0" promptText="Default Size: 12" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tip: Secure passwords should be 12+ characters long" underline="true" />
+            <CheckBox fx:id="NumberPass" mnemonicParsing="false" text="Number Password Output" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets left="60.0" />
+               </VBox.margin>
+            </CheckBox>
          </children>
          <BorderPane.margin>
             <Insets left="20.0" right="20.0" />

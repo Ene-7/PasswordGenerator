@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    private final String version = "v0.2";
+    private final String version = "v0.3";
 
     public static void main(String[] args) {
         launch(args);
@@ -20,5 +20,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setResizable(false);
         primaryStage.show();
+        Generator.CUSTOM_CHARS ="HELLO";
     }
 }
